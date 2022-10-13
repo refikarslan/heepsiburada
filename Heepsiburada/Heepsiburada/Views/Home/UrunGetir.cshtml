@@ -1,0 +1,58 @@
+﻿@model Heepsiburada.Models.Urun
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UrunGetir</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("Guncelle", "Home", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <th>
+                <th class="form-group">
+                <th>
+                            @Html.LabelFor(m=> m.UrunId)
+                            @Html.TextBoxFor(m=>m.UrunId, new {@class="form-control"})
+
+                </th>
+
+
+                <th>
+                            @Html.LabelFor(m=>m.UrunAd)
+                            @Html.TextBoxFor(m=>m.UrunAd, new {@class="form-control"})
+                </th>
+
+                <th>
+                            @Html.LabelFor(m=>m.UrunFiyat)
+                            @Html.TextBoxFor(m=>m.UrunFiyat, new {@class="form-control"})
+                </th>
+
+
+                <th>
+                            @Html.LabelFor(m=>m.MarkaId)
+                            @Html.TextBoxFor(m=>m.MarkaId, new {@class="form-control"})
+                </th>
+
+                <th>
+                            @Html.LabelFor(m=>m.KategoriId)
+                            @Html.TextBoxFor(m=>m.KategoriId, new {@class="form-control"})
+                </th>
+
+
+
+                <th>
+                    <button class="btn btn-warning">Ürün Güncelle</button>
+                </th>
+            </tr>
+        </table>
+    }
+</body>
+</html>

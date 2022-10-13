@@ -1,0 +1,22 @@
+﻿@model List<Kategori>
+@{
+    ViewData["Title"] = "Privacy";
+}
+<h1>Kategoriler</h1>
+
+<p>Dilediğiniz Kategoriyi Seçebilirsiniz</p>
+
+<table>
+    <tr>
+        <th>Ad</th>
+        <th>Id</th>
+    </tr>
+@foreach(var item in Model)
+{
+       <tr>
+           <td>@item.KategoriAd</td>
+               <td><a href=@Html.Raw($"/Home/Urun/{item.KategoriId}")> @item.KategoriId</a></td>
+       </tr>
+}
+</table>
+

@@ -1,0 +1,33 @@
+﻿@model List<Urun>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ad</th>
+        <th>Id</th>
+        <th>Fiyat</th>
+        <th>Ürün</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UrunAd</td>
+            <td><a href=@Html.Raw($"/Home/Urun/{item.UrunId}")> @item.UrunId</a></td>
+            <td>@item.UrunFiyat</td>
+            <td><img src=@Html.Raw($"/img/{item.UrunResim}") alt=@Html.Raw(item.UrunResim)/></td>
+                <td> <a href="/Home/Sil/@item.UrunId" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Home/UrunGetir/@item.UrunId" class="btn btn-success">GÜNCELLE</a></td>
+           
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Home/YeniUrun" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
